@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Dwd by joshuacox</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Dwd</h1>
+        <h2>Docker Wordpress Development Environment</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/joshuacox/dwd/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/joshuacox/dwd/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/joshuacox/dwd" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="ddd" class="anchor" href="#ddd" aria-hidden="true"><span class="octicon octicon-link"></span></a>ddd</h1>
+
+<p>Docker Drupal Development</p>
+
+<p>Build a container from scratch, this will prompt you for a few details like a Mysql password (which will be stored locally):</p>
+
+<pre><code>make temp
+</code></pre>
+
+<p>and you should be able to install a drupal site using the password you just gave,</p>
+
+<pre><code>mysqlhost=mysql   # this is because of the docker linking magic
+mysqluser=drupal
+database=drupal
+db_password=dbpass # The One You Supplied Earlier
+</code></pre>
+
+<p>to grab the data directories from apache and mysql do:</p>
+
+<pre><code>make grab
+</code></pre>
+
+<p>this will grab the /var/www/html from the drupal container and /var/lib/mysql from the mysql container and put them in datadir</p>
+
+<p>then you should be able to:</p>
+
+<pre><code>make prod
+</code></pre>
+
+<p>and run a persistent local drupal 8 install, if you want to try drupal 7 change out the 8 for a 7 in the FROM line of the Dockerfile</p>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-69335315-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
