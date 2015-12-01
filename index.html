@@ -29,20 +29,20 @@
     <div class="container">
       <section id="main_content">
         <h1>
-<a id="ddd" class="anchor" href="#ddd" aria-hidden="true"><span class="octicon octicon-link"></span></a>ddd</h1>
+<a id="dwd" class="anchor" href="#dwd" aria-hidden="true"><span class="octicon octicon-link"></span></a>dwd</h1>
 
-<p>Docker Drupal Development</p>
+<p>Docker WordPress Development</p>
 
 <p>Build a container from scratch, this will prompt you for a few details like a Mysql password (which will be stored locally):</p>
 
 <pre><code>make temp
 </code></pre>
 
-<p>and you should be able to install a drupal site using the password you just gave,</p>
+<p>and you should be able to install a wp site using the password you just gave,</p>
 
 <pre><code>mysqlhost=mysql   # this is because of the docker linking magic
-mysqluser=drupal
-database=drupal
+mysqluser=wpdbuser
+database=wpdb
 db_password=dbpass # The One You Supplied Earlier
 </code></pre>
 
@@ -51,14 +51,17 @@ db_password=dbpass # The One You Supplied Earlier
 <pre><code>make grab
 </code></pre>
 
-<p>this will grab the /var/www/html from the drupal container and /var/lib/mysql from the mysql container and put them in datadir</p>
+<p>this will grab the /var/www/html from the wp container and /var/lib/mysql from the mysql container and put them in datadir</p>
 
 <p>then you should be able to:</p>
 
 <pre><code>make prod
 </code></pre>
 
-<p>and run a persistent local drupal 8 install, if you want to try drupal 7 change out the 8 for a 7 in the FROM line of the Dockerfile</p>
+<p>and run a persistent local WP install</p>
+
+<p><a href="http://joshuacox.github.io/">Please check out my blog for other associated miscellanea:</a>
+<a href="http://joshuacox.github.io/">joshuacox.github.io</a></p>
       </section>
     </div>
 
